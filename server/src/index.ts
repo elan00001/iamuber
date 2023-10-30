@@ -1,4 +1,5 @@
 import { config } from "./config";
+import "reflect-metadata";
 import logger from "./utils/logger";
 import createServer from "./utils/createServer";
 
