@@ -1,0 +1,25 @@
+services:
+  redis:
+    container_name: "iamuber-localdev-redis"
+    image: "redis:7"
+    ports:
+      - "6379:6379"
+    volumes:
+      - iamuber-localdev-redis_volume:/data
+    
+  mysql:
+    container_name: "iamuber-localdev-mysql"
+    image: "mysql:8.0"
+    ports:
+      - "3306:3306"
+    volumes:
+      - iamuber-localdev-mysql_volume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  iamuber-localdev-mysql_volume:
+  iamuber-localdev-redis_volume:
