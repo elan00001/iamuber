@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start:dev": "npm run compose-dev:up && nodemon --exec ts-node src/index.ts || npm run compose-dev:stop",
+    "dev:watch": "nodemon --exec ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "compose-dev:up": "docker-compose --file docker-compose.dev.yml start  || docker-compose --file docker-compose.dev.yml up -d",
     "compose-dev:down": "docker-compose --file docker-compose.dev.yml down",
-    "compose-dev:stop": "docker-compose --file docker-compose.dev.yml stop"
+    "compose-dev:stop": "docker-compose --file docker-compose.dev.yml stop",
+    "compose-dev:down:rmvolume": "docker-compose --file docker-compose.dev.yml down -v"
   },
   "keywords": [],
   "author": "",

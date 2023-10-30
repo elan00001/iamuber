@@ -9,6 +9,7 @@ const dataSource = new DataSource({
   username: dbConfig.DB_USER,
   password: dbConfig.DB_PASSWORD,
   database: dbConfig.DB_DATABASE,
+  entities: [__dirname + "/../entity/*.entity.ts"],
 });
 
 
@@ -19,5 +20,6 @@ export async function createConnection() {
         logger.info("Data Source has been initialized!");
     } catch(err) {
         logger.error("Error during Data Source initialization", err);
+        process.exit(1);
     }
 }
