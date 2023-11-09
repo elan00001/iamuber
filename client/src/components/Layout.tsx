@@ -1,7 +1,7 @@
 const Layout = () => {
   return (
-    <div>
-      <p> Layout is here</p>
+    <div className="text-4xl text-red-500">
+      <p>Layout</p>
     </div>
   );
 };
